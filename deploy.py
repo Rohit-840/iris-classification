@@ -7,7 +7,7 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn import datasets
 from PIL import Image
 
-model= pickle.load(open(' DTC_model.pkl', 'rb'))
+model= pickle.load(open('DTC_model.pkl', 'rb'))
 def predict_species(sepal_length , sepal_width , petal_length , petal_width):
     input = np.array([[sepal_length , sepal_width , petal_length , petal_width]]).astype(np.float64)
     pred=model.predict(input).astype(np.float64)
@@ -73,9 +73,9 @@ st.write(prediction_probability)
 #uploaded_image = st.sidebar.file_uploader("Upload an image of an Iris flower", type=["jpg", "jpeg", "png"])
 
 # Load species-specific images
-setose_image = Image.open(r"/workspaces/IRIS-classification/setose.webp")
-versicolor_image = Image.open(r"/workspaces/IRIS-classification/versicolor.webp")
-virginica_image = Image.open(r"/workspaces/IRIS-classification/virginica.webp")
+setose_image = Image.open(r"/workspaces/iris-classification/setose.webp")
+versicolor_image = Image.open(r"/workspaces/iris-classification/versicolor.webp")
+virginica_image = Image.open(r"/workspaces/iris-classification/virginica.webp")
 image_size_in_pixels = int((.2 / 100.54) * 1)
 # Display uploaded image
     #if uploaded_image is not None:
