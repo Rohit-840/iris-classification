@@ -88,3 +88,4 @@ elif prediction == 1:
     st.image(versicolor_image, caption="Iris Versicolor", use_column_width=True)
 elif prediction == 2:
     st.image(virginica_image, caption="Iris Virginica", use_column_width=True)
+    
