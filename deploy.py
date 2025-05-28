@@ -6,11 +6,14 @@ import numpy as np
 from sklearn.tree import DecisionTreeClassifier
 from sklearn import datasets
 from PIL import Image
+current_dir = os.path.dirname(os.path.abspath(__file__))
+model_path = os.path.join(current_dir, 'DTC_model.pkl')
 
-model= pickle.load(open('DTC_model.pkl', 'rb'))
+# model = pickle.load(open("DTC_model.pkl" , 'rb'))
+# model= pickle.load(open('DTC_model.pkl', 'rb'))
 def predict_species(sepal_length , sepal_width , petal_length , petal_width):
     input = np.array([[sepal_length , sepal_width , petal_length , petal_width]]).astype(np.float64)
-    pred=model.predict(input).astype(np.float64)
+    pred=model.predict(input).astype(np.float64) # type: ignore
     return int(pred)
 
 st.write("""
